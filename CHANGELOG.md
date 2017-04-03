@@ -11,3 +11,4 @@
 * added proxy http module
 * removed proxy server.
 * added proxy register client.
+* added usage and comments to readme file.
