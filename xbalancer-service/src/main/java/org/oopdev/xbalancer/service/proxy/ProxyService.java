@@ -19,8 +19,10 @@ public class ProxyService {
     @Autowired
     ProxyAddressService proxyAddressService;
 
-    public Map<String, Host> filter(String relativePath, Map<String, Host> hostMap) {
+    public Map<String, Host> filter(String relativePath) {
+
         ProxyPointer pointer = proxyPointerService.findByPath(relativePath);
+
         Map<String, Host> filteredMap = new LinkedHashMap<>();
         if (pointer != null) {
             for (ProxyAddress address : pointer.getProxyAddressList()) {

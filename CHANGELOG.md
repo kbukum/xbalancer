@@ -9,3 +9,5 @@
 * added web module
 * added asset module
 * added proxy http module
+* removed proxy server.
+* added proxy register client.

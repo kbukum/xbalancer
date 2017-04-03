@@ -1,8 +1,8 @@
 package org.oopdev.xbalancer.http;
 
 import org.junit.Test;
+import org.oopdev.xbalancer.proxy.ProxyProperties;
 import org.oopdev.xbalancer.proxy.ProxyServer;
-import org.oopdev.xbalancer.proxy.ProxyServerConfiguration;
 import org.oopdev.xbalancer.proxy.host.Host;
 
 import java.util.LinkedHashMap;
@@ -21,7 +21,7 @@ public class ProxyServerTest {
     public static void main(String[] args) {
 
 
-        ProxyServerConfiguration configuration = new ProxyServerConfiguration();
+        ProxyProperties configuration = new ProxyProperties();
         configuration.setIoThreads(10);
         configuration.setHost(new Host("Server", "127.0.0.1", 8080));
         ProxyServer proxyServer = new ProxyServer(configuration, (exchange, hostMap) -> {

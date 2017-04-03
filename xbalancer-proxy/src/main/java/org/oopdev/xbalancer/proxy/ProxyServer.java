@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  * Created by kamilbukum on 31/03/2017.
  */
 public class ProxyServer {
-    private ProxyServerConfiguration configuration;
+    private ProxyProperties configuration;
     private HostFilter hostFilter;
     /**
      * Logging System
@@ -35,7 +35,7 @@ public class ProxyServer {
         return proxyHandler;
     }
 
-    public ProxyServer(ProxyServerConfiguration configuration, HostFilter filter) {
+    public ProxyServer(ProxyProperties configuration, HostFilter filter) {
         this.configuration = configuration;
         this.hostFilter = filter;
         this.proxyHandler = new LoadBalancer(this.hostFilter);
@@ -80,5 +80,9 @@ public class ProxyServer {
 
     public LoadBalancer getHandler() {
         return this.proxyHandler;
+    }
+
+    public ProxyProperties getConfiguration() {
+        return configuration;
     }
 }
