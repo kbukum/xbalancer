@@ -68,9 +68,28 @@ Host3: http://127.0.0.1:8285
       port: 8282 # proxy
     dynamic: true  # default true. get proxies as manuel from property or dynamic from @ProxyService
 ```
+* Example Calls
 
+    - http://127.0.0.1:8282/Dummy
+        - http://127.0.0.1:8283
+        - http://127.0.0.1:8284
+        
+    - http://127.0.0.1:8282/Another
+        - http://127.0.0.1:8284
+        - http://127.0.0.1:8285
+        
 ##### Manuel Proxy Server Configuration
 
+* Example Calls
+
+    - http://127.0.0.1:8282/h1h2
+        - http://127.0.0.1:8283
+        - http://127.0.0.1:8284
+        
+    - http://127.0.0.1:8282/h1h3
+        - http://127.0.0.1:8283
+        - http://127.0.0.1:8285
+        
 ```yaml
   balancer:
       name: Balancer Server # proxy server name
@@ -80,7 +99,7 @@ Host3: http://127.0.0.1:8285
     all: "*"
     proxies: # proxy relations.
       h1h2: [Host1, Host2] # http://127.0.0.1:8080/h1h2 broadcasts **Host1** and **Host2**
-      p1p3: [Host1, Host3] # http://127.0.0.1:8080/h1h3 broadcasts **Host1** and **Host3**
+      h1h2: [Host1, Host3] # http://127.0.0.1:8080/h1h3 broadcasts **Host1** and **Host3**
     hosts:
       - name: Host1
         host: 127.0.0.1

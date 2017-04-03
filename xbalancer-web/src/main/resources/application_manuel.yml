@@ -44,8 +44,8 @@ xb:
     dynamic: false
     allPath: "dummy"
     proxies:
-      p1p2: [Proxy1, Proxy2]
-      p1p3: [Proxy1, Proxy3]
+      h1h2: [Proxy1, Proxy2]
+      h1h3: [Proxy1, Proxy3]
     hosts:
       - name: Proxy1
         host: 127.0.0.1
