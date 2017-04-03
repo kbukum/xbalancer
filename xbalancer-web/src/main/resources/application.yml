@@ -1,0 +1,61 @@
+server:
+  servlet-path: /rest/
+  port: 8181
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/xbalancer-db?useSSL=false
+    username: root
+    password:
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: update
+    hibernate.naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+  resources:
+    chain:
+      enabled: true
+security:
+ oauth2:
+   resource:
+     userInfoUri: http://localhost:8080/user
+logging:
+  level:
+    org.springframework.security: DEBUG
+xb:
+  asset:
+    resourcePath: http://localhost:8081
+    uriPath: /*
+    indexFile: index.html
+    assetsName: io.robe.admin.ui
+    cached: false
+    type: http # use "classpath" or "filesystem" or "http"
+  balancer:
+    host:
+      name: Balancer Server
+      host: 127.0.0.1
+      port: 8282
+    dynamic: false
+    allPath: "dummy"
+    proxies:
+      p1p2: [Proxy1, Proxy2]
+      p1p3: [Proxy1, Proxy3]
+    hosts:
+      - name: Proxy1
+        host: 127.0.0.1
+        port: 8283
+      - name: Proxy2
+        host: 127.0.0.1
+        port: 8284
+      - name: Proxy3
+        host: 127.0.0.1
+        port: 8285
+  security:
+    settings:
+      tokenExpirationTime: 15 # Number of minutes
+      refreshTokenExpTime: 60 # Minutes
+      tokenIssuer: http://oopdev.org
+      tokenSigningKey: xm8EV6Hy5RMFK4EEACIDAwQus
+    authPath: /rest/**
+    loginPath: /rest/auth/login
+    refreshToken: /rest/auth/token

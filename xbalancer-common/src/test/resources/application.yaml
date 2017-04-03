@@ -1,0 +1,10 @@
+# ConfigurationTestModel
+---
+name: Kamil
+surname: Bukum
+age: 31
+languages:
+  - English
+  - Turkish
+  - Japanese
+  - Kurdish

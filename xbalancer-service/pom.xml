@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>xbalancer</artifactId>
+        <groupId>org.oopdev.xbalancer</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.oopdev.xbalancer.service</groupId>
+    <artifactId>xbalancer-service</artifactId>
+    <packaging>jar</packaging>
+
+    <name>xbalancer-service</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.oopdev.xbalancer.persistence</groupId>
+            <artifactId>xbalancer-persistence</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.oopdev.xbalancer.proxy</groupId>
+            <artifactId>xbalancer-proxy</artifactId>
+        </dependency>
+    </dependencies>
+</project>
