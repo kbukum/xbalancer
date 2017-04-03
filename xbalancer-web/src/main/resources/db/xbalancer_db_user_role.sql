@@ -1,0 +1,1 @@
+INSERT INTO `xbalancer-db`.user_role (user_oid, role_oid) VALUES ('1', '1');

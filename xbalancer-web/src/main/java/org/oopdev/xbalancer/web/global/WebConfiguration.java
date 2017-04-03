@@ -1,14 +1,7 @@
 package org.oopdev.xbalancer.web.global;
 
-import org.oopdev.xbalancer.assets.AssetProperties;
-import org.oopdev.xbalancer.assets.file.FileAssetServlet;
-import org.oopdev.xbalancer.assets.http.HttpAssetServlet;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.nio.charset.Charset;
 
 /**
  * Created by kamilbukum on 02/04/2017.
@@ -17,8 +10,7 @@ import java.nio.charset.Charset;
 @ConfigurationProperties(prefix = "xb")
 public class WebConfiguration {
 
-    private AssetProperties asset;
-
+    /*
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         if (asset == null) {
@@ -40,4 +32,6 @@ public class WebConfiguration {
     public AssetProperties getAsset() {
         return asset;
     }
+
+    */
 }

@@ -1,0 +1,3 @@
+INSERT INTO `xbalancer-db`.proxy_address (oid, create_date, create_user, update_date, update_user, data_version, host, name, port) VALUES ('1', '2017-04-04 01:35:53', 'admin', '2017-04-04 01:35:59', 'admin', 0, '127.0.0.1', 'server1', 8283);
+INSERT INTO `xbalancer-db`.proxy_address (oid, create_date, create_user, update_date, update_user, data_version, host, name, port) VALUES ('2', '2017-04-04 01:35:53', 'admin', '2017-04-04 01:35:59', 'admin', 0, '127.0.0.1', 'server2', 8284);
+INSERT INTO `xbalancer-db`.proxy_address (oid, create_date, create_user, update_date, update_user, data_version, host, name, port) VALUES ('3', '2017-04-04 01:35:53', 'admin', '2017-04-04 01:35:59', 'admin', 0, '127.0.0.1', 'server3', 8285);

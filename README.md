@@ -37,7 +37,16 @@ Provides Assets to represent
 
 Integrates all configuration ( Rest Servlet, Context, Datasource, Proxy Configuration, Assets Configuration ) by using Spring boot.
 
+#### Project Detail [..more](./xbalancer-web/src/main/resources/docs/home.md)
+- You can see Project Detail after install and run aplication.
+- Also defined Project Detail in xbalancer/xbalancer-web/src/main/resources/docs folder
+
+username: admin
+password: 123123
+
 #### Proxy Server Configuration
+
+#### Dynamic Proxy Configuration.
 
 ```yaml
   balancer:

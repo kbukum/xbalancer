@@ -3,6 +3,7 @@ package org.oopdev.xbalancer.security.auth.ajax;
 import org.oopdev.xbalancer.domain.security.User;
 import org.oopdev.xbalancer.security.model.UserContext;
 import org.oopdev.xbalancer.service.security.SecurityService;
+import org.oopdev.xbalancer.service.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -24,6 +25,9 @@ public class AjaxAuthenticationProvider implements AuthenticationProvider {
     private final SecurityService securityService;
 
     @Autowired
+    UserService userService;
+
+    @Autowired
     public AjaxAuthenticationProvider(final SecurityService securityService, final BCryptPasswordEncoder encoder) {
         this.securityService = securityService;
         this.encoder = encoder;
@@ -36,7 +40,10 @@ public class AjaxAuthenticationProvider implements AuthenticationProvider {
         String username = (String) authentication.getPrincipal();
         String password = (String) authentication.getCredentials();
 
-        User user = securityService.getByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+        User user = userService.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found: " + username);
+        }
 
         if (!encoder.matches(password, user.getPassword())) {
             throw new BadCredentialsException("Authentication Failed. Username or Password not valid.");

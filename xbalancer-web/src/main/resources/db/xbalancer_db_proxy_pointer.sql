@@ -1,0 +1,2 @@
+INSERT INTO `xbalancer-db`.proxy_pointer (oid, create_date, create_user, update_date, update_user, data_version, description, path) VALUES ('1', '2017-04-04 01:34:34', 'admin', '2017-04-04 01:34:41', 'admin', 0, 'Dummy Path', 'Dummy');
+INSERT INTO `xbalancer-db`.proxy_pointer (oid, create_date, create_user, update_date, update_user, data_version, description, path) VALUES ('2', '2017-04-04 01:35:16', 'admin', '2017-04-04 01:35:20', 'admin', 0, 'Another Path', 'Another');

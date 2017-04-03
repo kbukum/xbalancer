@@ -41,5 +41,19 @@ xb:
       name: Balancer Server
       host: 127.0.0.1
       port: 8282
-    allPath: "*"
+    dynamic: false
+    allPath: "dummy"
+    proxies:
+      p1p2: [Proxy1, Proxy2]
+      p1p3: [Proxy1, Proxy3]
+    hosts:
+      - name: Proxy1
+        host: 127.0.0.1
+        port: 8283
+      - name: Proxy2
+        host: 127.0.0.1
+        port: 8284
+      - name: Proxy3
+        host: 127.0.0.1
+        port: 8285
 

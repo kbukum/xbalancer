@@ -1,0 +1,3 @@
+INSERT INTO `xbalancer-db`.permisson (oid, create_date, create_user, update_date, update_user, data_version, authority, description, name) VALUES ('1', '2017-04-04 01:30:57', 'admin', '2017-04-04 01:31:03', 'admin', 0, 'USER', 'User Permission', 'USER');
+INSERT INTO `xbalancer-db`.permisson (oid, create_date, create_user, update_date, update_user, data_version, authority, description, name) VALUES ('2', '2017-04-04 01:31:38', 'admin', '2017-04-04 01:31:41', 'admin', 0, 'ROLE', 'Role Permission', null);
+INSERT INTO `xbalancer-db`.permisson (oid, create_date, create_user, update_date, update_user, data_version, authority, description, name) VALUES ('3', '2017-04-04 01:32:07', 'admin', '2017-04-04 01:32:11', 'admin', 0, 'BROWSE_ALL', 'Browse all Crud Operations', null);

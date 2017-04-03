@@ -1,5 +1,6 @@
 package org.oopdev.xbalancer.domain.security;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.oopdev.xbalancer.domain.BaseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,14 +17,17 @@ import java.util.Set;
 @Entity
 @Table(name = "USER")
 public class User extends BaseEntity implements UserDetails {
-    @Column(name = "username", unique = true)
+    @Column(name = "USERNAME", unique = true)
     private String username;
 
-    @Column(name = "password")
+    @Column(name = "PASSWORD")
     private String password;
 
+    @Column(name = "ACCOUNT_NON_LOCKED")
     private boolean accountNonLocked = true;
+    @Column(name = "CREDENTIALS_NON_EXPIRED")
     private boolean credentialsNonExpired = true;
+    @Column(name = "ACCOUNT_ENABLED")
     private boolean enabled = true;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -89,6 +93,7 @@ public class User extends BaseEntity implements UserDetails {
         return authorityList;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }

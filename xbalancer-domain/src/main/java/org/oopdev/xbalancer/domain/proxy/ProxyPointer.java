@@ -18,8 +18,16 @@ public class ProxyPointer extends BaseEntity {
     private String description;
 
 
-    @JoinTable(name = "PROXY_POINTER_ADDRESSES")
-    @OneToMany
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "PROXY_POINTER_ADDRESSES",
+            joinColumns = {
+                    @JoinColumn(name = "POINTER_OID")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "ADDRESS_OID")
+            }
+    )
     private List<ProxyAddress> proxyAddressList = new LinkedList<>();
 
     public void setPath(String path) {

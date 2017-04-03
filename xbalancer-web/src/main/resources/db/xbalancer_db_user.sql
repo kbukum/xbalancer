@@ -1,0 +1,1 @@
+INSERT INTO `xbalancer-db`.user (oid, create_date, create_user, update_date, update_user, data_version, account_non_locked, credentials_non_expired, account_enabled, password, username) VALUES ('1', null, 'admin', null, 'admin', 0, true, true, true, '$2a$06$p3YaomcrCgWVaEyS0drqHuoroFVBONTg31omlSNV21P8K5FmCrXxm', 'admin');

@@ -11,7 +11,7 @@ import org.oopdev.xbalancer.security.model.token.JwtToken;
 import org.oopdev.xbalancer.security.model.token.JwtTokenFactory;
 import org.oopdev.xbalancer.security.model.token.RawAccessJwtToken;
 import org.oopdev.xbalancer.security.model.token.RefreshToken;
-import org.oopdev.xbalancer.service.security.SecurityService;
+import org.oopdev.xbalancer.service.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
@@ -35,7 +35,7 @@ public class TokenService {
     @Autowired
     private JwtSettings jwtSettings;
     @Autowired
-    private SecurityService securityService;
+    private UserService userService;
     @Autowired
     private TokenVerifier tokenVerifier;
     @Autowired
@@ -54,7 +54,10 @@ public class TokenService {
         }
 
         String subject = refreshToken.getSubject();
-        User user = securityService.getByUsername(subject).orElseThrow(() -> new UsernameNotFoundException("User not found: " + subject));
+        User user = userService.findByUsername(subject);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found: " + subject);
+        }
 
         List<GrantedAuthority> authorities = user.getAuthorities();
         if (authorities == null) throw new InsufficientAuthenticationException("User has no roles assigned");
