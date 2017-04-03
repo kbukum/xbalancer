@@ -41,8 +41,20 @@ Integrates all configuration ( Rest Servlet, Context, Datasource, Proxy Configur
 - You can see Project Detail after install and run aplication.
 - Also defined Project Detail in xbalancer/xbalancer-web/src/main/resources/docs folder
 
+#### Run Project on any IDE
+
+url: http://localhost:8181
 username: admin
 password: 123123
+
+- Web Server : http://127.0.0.1:8181
+- Proxy Server: http://127.0.0.1:8282
+- Defined Dummy Servers :
+
+Host1: http://127.0.0.1:8283
+Host2: http://127.0.0.1:8284
+Host3: http://127.0.0.1:8285
+
 
 #### Proxy Server Configuration
 
