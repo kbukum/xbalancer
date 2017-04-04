@@ -77,7 +77,18 @@ Host3: http://127.0.0.1:8285
     - http://127.0.0.1:8282/Another
         - http://127.0.0.1:8284
         - http://127.0.0.1:8285
+     
         
+##### Start Dummy Server
+
+* xbalancer-dummy is provides to run dummy server.
+
+You can run a server with main arguments.
+
+* Arguments 
+
+--name server1 --host localhost --port 8183 
+
 ##### Manuel Proxy Server Configuration
 
 * Example Calls
